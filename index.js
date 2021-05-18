@@ -1,14 +1,23 @@
 var proxy = require('express-http-proxy');
+var http=require("http")
+http.globalAgent.maxSockets = Infinity;
 
+var compression = require('compression')
 var cors=require("cors")
+const NodeCache = require( "node-cache" );
+const myCache = new NodeCache();
+
 var app = require('express')();
+
+var server=http.createServer(app)
+app.use(compression())
 app.use(cors())
 
-app.use(proxy('https://games.awdrgyjil1234.repl.co/'));
+
+app.use(proxy('https://aquapark.io'));
+
 /*
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });*/
-const listener = app.listen(process.env.PORT, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+server.listen(8080)
