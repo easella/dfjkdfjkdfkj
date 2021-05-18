@@ -13,4 +13,4 @@ app.use(proxy('https://aquapark.io'));
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
 });*/
-.listen(PORT)
+app.listen(PORT)
