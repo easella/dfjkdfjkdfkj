@@ -1,5 +1,16 @@
 var proxy = require('express-http-proxy');
+
+
+
 var app = require('express')();
-const PORT = process.env.PORT || 8080
-app.use('/proxy', proxy('https://aquapark.io'));
-app.listen(PORT)
+
+var PORT = process.env.PORT || 8080
+
+
+app.use(proxy('https://aquapark.io'));
+
+/*
+app.get('/', function(request, response) {
+  response.sendFile(__dirname + '/views/index.html');
+});*/
+.listen(PORT)
