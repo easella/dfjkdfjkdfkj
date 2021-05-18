@@ -7,7 +7,7 @@ var app = require('express')();
 var PORT = process.env.PORT || 8080
 
 
-app.use(proxy('https://aquapark.io'));
+app.use(proxy('https://cocky.io'));
 
 /*
 app.get('/', function(request, response) {
