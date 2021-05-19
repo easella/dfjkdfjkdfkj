@@ -7,7 +7,7 @@ var app = require('express')();
 var PORT = process.env.PORT || 8080
 
 
-app.use(proxy('https://cocky.io'));
+app.use(proxy('https://games.awdrgyjil1234.repl.co/'));
 
 /*
 app.get('/', function(request, response) {
